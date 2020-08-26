@@ -2,28 +2,8 @@
   // Crea un diagramma per una tabella di db che rappresenti gli Users di un blog.
   // Crea una classe User che rappresenti quella tabella, e usala per stampare in pagina i dati di alcuni Users.
 
-
-  // creo classe User
-  class User {
-    public $nome;
-    public $cognome;
-    public $email;
-    public $data_iscrizione;
-    public $commenti;
-
-    public function __construct($_nome, $_cognome, $_email, $_data_iscrizione, $_commenti) {
-      $this->nome = $_nome;
-      $this->cognome = $_cognome;
-      $this->email = $_email;
-      $this->data_iscrizione = $_data_iscrizione;
-      $this->commenti = $_commenti;
-    }
-
-    public function stampaUtenti() {
-      return $this->nome . ' ' . $this->cognome . '<br>' . $this->email . '<br>' . $this->data_iscrizione . '<br>' . $this->commenti . '<br>' . '<br>';
-    }
-
-  }
+  // includo la classe User
+  require_once(__DIR__.'/user.php');
 
   // creo array di utenti
   $utenti = [
@@ -54,7 +34,7 @@
   // stampo risultato utilizzando ciclo foreach
   foreach ($utenti as $utente) {
     $singoloUtente = new User($utente['nome'], $utente['cognome'], $utente['email'], $utente['data_iscrizione'], $utente['commenti']);
-    echo $singoloUtente->stampaUtenti();
+    echo $singoloUtente->stampaUtente();
   }
 
 
