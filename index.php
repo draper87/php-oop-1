@@ -50,6 +50,8 @@
     ]
   ];
 
+
+  // stampo risultato utilizzando ciclo foreach
   foreach ($utenti as $utente) {
     $singoloUtente = new User($utente['nome'], $utente['cognome'], $utente['email'], $utente['data_iscrizione'], $utente['commenti']);
     echo $singoloUtente->stampaUtenti();
