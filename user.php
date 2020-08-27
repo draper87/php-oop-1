@@ -29,5 +29,9 @@ class User {
 
   }
 
+  public function getEmail() {
+    echo $this->email;
+  }
+
 }
  ?>

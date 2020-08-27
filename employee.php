@@ -3,6 +3,8 @@
   // classe figlia di User riservata ai dipendenti
   class Employee extends User  {
 
+    use SendEmail;
+
     protected $livello_anzianita;
 
     // funzione che setta un livello di anzianità espresso in valore numerico
@@ -21,6 +23,10 @@
         'livello' => $this->livello_anzianita
       ];
 
+    }
+
+    public function getEmail() {
+      return $this->email;
     }
 
   }
